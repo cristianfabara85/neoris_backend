@@ -1,0 +1,500 @@
+{
+	"info": {
+		"_postman_id": "4be4b428-398b-4f1a-849d-780e631a5013",
+		"name": "neoris-backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2134291",
+		"_collection_link": "https://cfabara.postman.co/workspace/neoris_prueba~fd3fa1e5-cf89-44fc-8a55-40ad9af0a278/collection/2134291-4be4b428-398b-4f1a-849d-780e631a5013?action=share&source=collection_link&creator=2134291"
+	},
+	"item": [
+		{
+			"name": "clientes",
+			"item": [
+				{
+					"name": "crear cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "/*\r\n    GENERO:\r\n        5:Masculino\r\n        6:Femenino\r\n    STATE:\r\n        13:Activo\r\n        14:Inactivo\r\n*/\r\n{\r\n    \"password\": \"1234a\",\r\n    \"state\": 13,\r\n    \"person\": {\r\n        \"name\": \"Luciana Santos\",\r\n        \"gender\": 6,\r\n        \"age\": 39,\r\n        \"documentId\": \"1976451202\",\r\n        \"address\": \"Chillogallo Conj. San Andres\",\r\n        \"phone\": \"0986441985\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clientes/crearCliente",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clientes",
+								"crearCliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar cliente",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "/*\r\n    GENERO:\r\n        5:Masculino\r\n        6:Femenino\r\n    STATE:\r\n        13:Activo\r\n        14:Inactivo\r\n*/\r\n\r\n{\r\n    \"password\": \"Tochos_20251\",\r\n    \"state\": 13,\r\n    \"person\": {\r\n        \"documentId\": \"1719211383\",\r\n        \"name\": \"Viviana Santos\",\r\n        \"address\": \"Chillogallo 1\",\r\n        \"age\": 39,\r\n        \"gender\": 6,\r\n        \"phone\": \"0975462135\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clientes/actualizarCliente?clientId=15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clientes",
+								"actualizarCliente"
+							],
+							"query": [
+								{
+									"key": "clientId",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "borrar cliente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clientes/borrarCliente?documentId=1758875650",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clientes",
+								"borrarCliente"
+							],
+							"query": [
+								{
+									"key": "documentId",
+									"value": "1758875650"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listado de clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/clientes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clientes",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cuentas",
+			"item": [
+				{
+					"name": "crear cuenta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "/*\r\n    type:\r\n        8:Ahorros\r\n        9:Corriente\r\n    state:\r\n        13:Activo\r\n        14:Inactivo\r\n    clientId: Tomar luego de que se ha ingresado un nuevo cliente.\r\n*/\r\n\r\n{\r\n    \"number\": \"585545\",\r\n    \"state\": 13,\r\n    \"initialBalance\":1000,\r\n    \"type\":9,\r\n    \"clientId\":24\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cuentas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cuentas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar cuenta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "/*\r\n    type:\r\n        8:Ahorros\r\n        9:Corriente\r\n    state:\r\n        13:Activo\r\n        14:Inactivo\r\n    clientId: Tomar luego de que se ha ingresado un nuevo cliente.\r\n*/\r\n\r\n{\r\n    \"state\": 13,\r\n    \"type\":8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cuentas/?accountNumber=547845621",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cuentas",
+								""
+							],
+							"query": [
+								{
+									"key": "accountNumber",
+									"value": "547845621"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "borrar cuenta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/cuentas/?accountNumber=585545",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cuentas",
+								""
+							],
+							"query": [
+								{
+									"key": "accountNumber",
+									"value": "585545"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listado de cuentas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cuentas/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cuentas",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listado de cuentas por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/cuentas/?documentId=1700334764",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cuentas",
+								""
+							],
+							"query": [
+								{
+									"key": "documentId",
+									"value": "1700334764"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "movimientos",
+			"item": [
+				{
+					"name": "crear movimiento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "/*\r\n    type:\r\n        11:Deposito\r\n        12:Retiro\r\n  */\r\n\r\n{\r\n    \"accountId\": 4899279900,\r\n    \"type\":11,\r\n    \"amount\":2000\r\n   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/movimientos/?accountNumber=4899279900",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"movimientos",
+								""
+							],
+							"query": [
+								{
+									"key": "accountNumber",
+									"value": "4899279900"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta de saldos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/movimientos/?accountNumber=478758",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"movimientos",
+								""
+							],
+							"query": [
+								{
+									"key": "accountNumber",
+									"value": "478758"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estado de cuenta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/movimientos/accountState?documentId=1758875650&fromDate=2024/04/07 11:00:00",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"movimientos",
+								"accountState"
+							],
+							"query": [
+								{
+									"key": "documentId",
+									"value": "1758875650"
+								},
+								{
+									"key": "fromDate",
+									"value": "2024/04/07 11:00:00"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "personas",
+			"item": [
+				{
+					"name": "create persona",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"documentId\":\"1719211383\",\r\n    \"name\":\"Viviana Santos\",\r\n    \"address\":\"Chillogallo Conj. San Andres\",\r\n    \"age\":39,\r\n    \"gender\":6,\r\n    \"phone\":\"0986441985\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/personas/crearPersona",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"personas",
+								"crearPersona"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar persona",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"documentId\":\"1719211383\",\r\n    \"name\":\"Gladys Viviana Santos Negrete\",\r\n    \"address\":\"Chillogallo Conj. San Andres Casa 7\",\r\n    \"age\":39,\r\n    \"gender\":6,\r\n    \"phone\":\"0986441985\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/personas/actualizarPersona?personId=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"personas",
+								"actualizarPersona"
+							],
+							"query": [
+								{
+									"key": "personId",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar persona",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"documentId\":\"1758875650\",\r\n    \"name\":\"Gabriel Fabara\",\r\n    \"address\":\"Chillogallo Conj. San Andres\",\r\n    \"age\":5,\r\n    \"gender\":5,\r\n    \"phone\":\"0984938084\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/personas/borrarPersona?documentId=1719211383",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"personas",
+								"borrarPersona"
+							],
+							"query": [
+								{
+									"key": "documentId",
+									"value": "1719211383"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
