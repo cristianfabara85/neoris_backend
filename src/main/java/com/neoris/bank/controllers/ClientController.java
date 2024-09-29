@@ -83,11 +83,11 @@ Logger logger = LoggerFactory.getLogger(PersonController.class);
 			List<Client> clientCreated=clientService.findAllCLients();
 			if(clientCreated.isEmpty()) {
 				response.setCode(200);
-				response.setMessage("No se ha creado ningun cliente.");
+				response.setMessage("No se ha encontrado ningun cliente.");
 				response.setData(clientCreated);
 				logger.info(gson.toJson(response));
 			}else{
-				BankUtils.mapResponse(response, Collections.singletonList(clientCreated),"Se ha creado/actualizado el siguiente cliente:");
+				BankUtils.mapResponse(response, Collections.singletonList(clientCreated),"Se ha encontrado los siguientes clientes:");
 			}
 			return response;
 	}
