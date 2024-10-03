@@ -1,4 +1,4 @@
-# neoris-backend
+# neoris-prueba-backend
 
 Realizado por: Christian Fabara Riofrío
 
@@ -29,7 +29,7 @@ Realizado por: Christian Fabara Riofrío
 
 ### Pasos para instalación con docker:
 
-Ubicarse en el path del proyecto: neoris-backend
+Ubicarse en el path del proyecto: prueba-backend
 
 - 2.1 Compilar y generar empaquetado:
 
